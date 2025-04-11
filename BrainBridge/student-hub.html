@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Hub | Brain Bridge</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="student-hub.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <span style="color: #ff68bd;">Brain</span><span style="color: #07bdff;">Bridge</span>
+            </a>
+            <div class="d-flex align-items-center">
+                <div class="dropdown">
+                   <a href="index.html">Home</a>
+                   
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Student Hub Main Content -->
+    <div class="container-fluid student-hub-container">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-lg-2 sidebar">
+                <div class="sidebar-content">
+                    <div class="user-profile text-center mb-4">
+                        <img src="https://ui-avatars.com/api/?name=Student+Name&background=07bdff&color=fff" alt="Profile" class="profile-img">
+                        <h5 class="mt-2">Student Name</h5>
+                        <p class="text-muted">Grade 10</p>
+                    </div>
+                    
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#dashboard">
+                                <i class="fas fa-tachometer-alt me-2"></i> Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#goals">
+                                <i class="fas fa-bullseye me-2"></i> Daily Goals
+                            </a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="#assessment">
+                                <i class="fas fa-clipboard-check me-2"></i> Skill Assessment
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#resources">
+                                <i class="fas fa-book me-2"></i> Learning Resources
+                            </a>
+                        </li>
+                    </ul>
+                    
+                    <div class="streak-counter mt-auto">
+                        <div class="d-flex align-items-center justify-content-center">
+                            <i class="fas fa-fire text-danger me-2"></i>
+                            <div>
+                                <h6 class="mb-0">5 Day Streak!</h6>
+                                <small class="text-muted">Keep it going</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="col-lg-10 main-content">
+                <!-- Dashboard Section -->
+                <section id="dashboard" class="dashboard-section">
+                    <div class="row mb-4">
+                        <div class="col-md-8">
+                            <h2 class="mb-0">Welcome back, <span class="text-primary">Student!</span></h2>
+                            <p class="text-muted">Here's your learning overview</p>
+                        </div>
+                        <div class="col-md-4 text-md-end">
+                            <button class="btn btn-primary" id="setGoalBtn">
+                                <i class="fas fa-plus me-1"></i> Set Today's Goal
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Today's Goal Card -->
+                    <div class="card goal-card mb-4" id="goals">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="card-title mb-0">
+                                    <i class="fas fa-bullseye me-2 text-primary"></i>Today's Goal
+                                </h5>
+                                <span class="badge bg-success">Active</span>
+                            </div>
+                            <p class="card-text" id="dailyGoalText">Complete 3 math exercises and 1 science quiz</p>
+                            <div class="progress mb-3">
+                                <div class="progress-bar" id="goalProgress" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <small class="text-muted">Started: Today</small>
+                                <button class="btn btn-sm btn-outline-primary" id="markCompleteBtn">
+                                    <i class="fas fa-check me-1"></i>Mark as Complete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Progress Overview -->
+                    <div class="row mb-4">
+                        <div class="col-md-4">
+                            <div class="card stat-card">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="icon-circle bg-primary-light">
+                                            <i class="fas fa-check-circle text-primary"></i>
+                                        </div>
+                                        <div class="ms-3">
+                                            <h6 class="mb-0">Completed Goals</h6>
+                                            <h3 class="mb-0">12</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card stat-card">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="icon-circle bg-success-light">
+                                            <i class="fas fa-fire text-success"></i>
+                                        </div>
+                                        <div class="ms-3">
+                                            <h6 class="mb-0">Current Streak</h6>
+                                            <h3 class="mb-0">5 days</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card stat-card">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="icon-circle bg-warning-light">
+                                            <i class="fas fa-star text-warning"></i>
+                                        </div>
+                                        <div class="ms-3">
+                                            <h6 class="mb-0">Achievements</h6>
+                                            <h3 class="mb-0">8</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Skill Assessment Card -->
+                    <div class="card mb-4" id="assessment">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <i class="fas fa-clipboard-list me-2 text-info"></i>Skill Assessment
+                            </h5>
+                            <p class="card-text">Take a quick quiz to identify your strengths and areas for improvement</p>
+                            
+                            <div class="row mt-3">
+                                <div class="col-md-3 mb-3">
+                                    <div class="subject-card math" data-subject="math">
+                                        <i class="fas fa-square-root-alt"></i>
+                                        <span>Mathematics</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <div class="subject-card science" data-subject="science">
+                                        <i class="fas fa-flask"></i>
+                                        <span>Science</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <div class="subject-card english" data-subject="english">
+                                        <i class="fas fa-book-open"></i>
+                                        <span>English</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <div class="subject-card history" data-subject="history">
+                                        <i class="fas fa-landmark"></i>
+                                        <span>History</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button class="btn btn-primary mt-2" id="startAssessmentBtn">
+                                <i class="fas fa-play me-1"></i> Start Assessment
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Recommended Resources -->
+                    <h5 class="mb-3" id="resources">
+                        <i class="fas fa-lightbulb me-2 text-warning"></i>Recommended For You
+                    </h5>
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="resource-card">
+                                <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" class="resource-img" alt="Math">
+                                <div class="resource-body">
+                                    <h6>Algebra Basics</h6>
+                                    <p class="text-muted">Master fundamental algebra concepts</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge bg-primary">Mathematics</span>
+                                        <button class="btn btn-sm btn-outline-primary"><a href="https://www.youtube.com/live/X98-TJRMZRk?si=Dd6XH-SjIXPpEO09">Start</a></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="resource-card">
+                                <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" class="resource-img" alt="Science">
+                                <div class="resource-body">
+                                    <h6>Chemical Reactions</h6>
+                                    <p class="text-muted">Understand basic chemistry principles</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge bg-success">Science</span>
+                                        <button class="btn btn-sm btn-outline-success" ><a href="https://youtu.be/5iTOphGnCtg?si=SvRG8Y5wlgIsBxIH">Start</a></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="resource-card">
+                                <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" class="resource-img" alt="English">
+                                <div class="resource-body">
+                                    <h6>Grammar Essentials</h6>
+                                    <p class="text-muted">Improve your English grammar skills</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge bg-info">English</span>
+                                        <button class="btn btn-sm btn-outline-info"><a href="https://youtu.be/QXVzmzhxWWc?si=I5_5HdFTAcoGBcoy">Start</a></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Goal Setting Modal -->
+                <div class="modal fade" id="goalModal" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Set Today's Learning Goal</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label for="goalInput" class="form-label">What do you want to accomplish today?</label>
+                                    <textarea class="form-control" id="goalInput" rows="3" placeholder="Example: Complete 3 math exercises and review science chapter 4"></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Priority</label>
+                                    <select class="form-select" id="goalPriority">
+                                        <option value="low">Low</option>
+                                        <option value="medium" selected>Medium</option>
+                                        <option value="high">High</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-primary" id="saveGoalBtn">Save Goal</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Assessment Quiz Modal -->
+                <div class="modal fade" id="quizModal" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="quizSubjectTitle">Mathematics Assessment</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div id="quizContainer">
+                                    <div class="quiz-intro">
+                                        <h6>About This Assessment</h6>
+                                        <p>This quick quiz will help identify your current skill level and recommend personalized learning materials.</p>
+                                        <ul>
+                                            <li>10 multiple-choice questions</li>
+                                            <li>Approximately 5-10 minutes</li>
+                                            <li>No negative marking</li>
+                                        </ul>
+                                        <button class="btn btn-primary" id="startQuizBtn">Start Quiz</button>
+                                    </div>
+                                    
+                                    <div class="quiz-questions d-none">
+                                        <div class="progress mb-3">
+                                            <div class="progress-bar" id="quizProgress" role="progressbar" style="width: 0%"></div>
+                                        </div>
+                                        <h6 class="question-text mb-3">What is the value of π (pi) rounded to two decimal places?</h6>
+                                        <div class="options-container mb-4">
+                                            <div class="form-check mb-2">
+                                                <input class="form-check-input" type="radio" name="quizOption" id="option1">
+                                                <label class="form-check-label" for="option1">3.14</label>
+                                            </div>
+                                            <div class="form-check mb-2">
+                                                <input class="form-check-input" type="radio" name="quizOption" id="option2">
+                                                <label class="form-check-label" for="option2">3.16</label>
+                                            </div>
+                                            <div class="form-check mb-2">
+                                                <input class="form-check-input" type="radio" name="quizOption" id="option3">
+                                                <label class="form-check-label" for="option3">3.18</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="quizOption" id="option4">
+                                                <label class="form-check-label" for="option4">3.12</label>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <button class="btn btn-outline-secondary" id="prevQuestionBtn" disabled>Previous</button>
+                                            <button class="btn btn-primary" id="nextQuestionBtn">Next</button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="quiz-results d-none">
+                                        <div class="text-center mb-4">
+                                            <i class="fas fa-check-circle text-success fa-4x mb-3"></i>
+                                            <h5>Assessment Complete!</h5>
+                                            <p>Your skill level: <span class="fw-bold">Intermediate</span></p>
+                                        </div>
+                                        
+                                        <h6 class="mb-3">Recommendations:</h6>
+                                        <ul class="list-group mb-3">
+                                            <li class="list-group-item">
+                                                <i class="fas fa-book me-2 text-primary"></i>
+                                                Focus on algebraic expressions (scored 60%)
+                                            </li>
+                                            <li class="list-group-item">
+                                                <i class="fas fa-book me-2 text-primary"></i>
+                                                Practice geometry problems (scored 45%)
+                                            </li>
+                                            <li class="list-group-item">
+                                                <i class="fas fa-book me-2 text-primary"></i>
+                                                Review basic arithmetic (scored 75%)
+                                            </li>
+                                        </ul>
+                                        
+                                        <button class="btn btn-primary w-100" data-bs-dismiss="modal">View Learning Plan</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="student-hub.js"></script>
+</body>
+</html>

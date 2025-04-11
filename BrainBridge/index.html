@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Bridge</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --primary: #ff68bd;
+            --secondary: #a6e23d;
+            --accent1: #07bdff;
+            --accent2: #a890ff;
+            --accent3: #fd7a39;
+            --accent4: #00c69e;
+            --accent5: #f5e45f;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        /* Gradient Background */
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary), var(--accent1));
+            color: white;
+            padding: 6rem 0;
+        }
+        
+        /* Feature Cards */
+        .feature-card {
+            border: none;
+            border-radius: 15px;
+            transition: transform 0.3s;
+            margin-bottom: 20px;
+            height: 100%;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        /* Color Classes for Features */
+        .bg-feature1 { background: linear-gradient(45deg, var(--primary), var(--accent2)); }
+        .bg-feature2 { background: linear-gradient(45deg, var(--accent4), var(--secondary)); }
+        .bg-feature3 { background: linear-gradient(45deg, var(--accent1), var(--accent4)); }
+        
+        /* Navbar */
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <span style="color: var(--primary);">Brain</span><span style="color: var(--accent1);">Bridge</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                   
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-primary" href="login.html" style="background: var(--accent3); border: none;">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-4">From Confusion to Clarity — Let’s Learn Together</h1>
+            <p class="lead mb-5">This platform bridges the gap between students, teachers, and parents by offering a smart learning environment.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#features" class="btn btn-light btn-lg px-4">Explore Features</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Unified Empowerment.</h2>
+                <p class="text-muted">A unified dashboard experience for Students, Teachers, and Parents.</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Feature 1 -->
+                <div class="col-md-4">
+                    <div class="card feature-card">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-wrapper mb-3 p-3 rounded-circle bg-feature1 d-inline-block">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                                </svg>
+                            </div>
+                            <h4 class="card-title">Student Learning hub</h4>
+                            <p class="card-text">Track progress. Access resources. Grow daily</p>
+                            <a href="student-hub.html" class="btn btn-sm mt-2" style="background: var(--primary); color: white;">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="col-md-4">
+                    <div class="card feature-card">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-wrapper mb-3 p-3 rounded-circle bg-feature2 d-inline-block">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/>
+                                </svg>
+                            </div>
+                            <h4 class="card-title">Educator command</h4>
+                            <p class="card-text">Manage classes. Engage minds. Inspire futures.</p>
+                            <a href="teacher-dashboard.html" class="btn btn-sm mt-2" style="background: var(--accent4); color: white;">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="col-md-4">
+                    <div class="card feature-card">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-wrapper mb-3 p-3 rounded-circle bg-feature3 d-inline-block">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11 2v20c-5.07-.5-9-4.79-9-10s3.93-9.5 9-10zm2.03 0v8.99H22c-.47-4.74-4.24-8.52-8.97-8.99zm0 11.01V22c4.74-.47 8.5-4.25 8.97-8.99h-8.97z"/>
+                                </svg>
+                            </div>
+                            <h4 class="card-title">Guardian View</h4>
+                            <p class="card-text">Stay informed. Support learning. Be involved.</p>
+                            <a href="parent-dashboard.html" class="btn btn-sm mt-2" style="background: var(--accent1); color: white;">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+    <!-- Footer -->
+    <footer id="contact" class="py-5 text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5 class="fw-bold mb-3">
+                        <span style="color: var(--primary);">Brain</span>
+                        <span style="color: var(--accent1);">Bridge</span>
+                    </h5>
+                    <p> Personalized learning platform helping students reach their full potential.</p>
+                </div>
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5 class="fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#features" class="text-white text-decoration-none">Features</a></li>
+                        <li><a href="#contact" class="text-white text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3">Contact Us</h5>
+                    <p>sanjana173btcse23@igdtuw.ac.in</p>
+                    <p>shrishti192btcse23@igdtuw.ac.in</p>
+
+                   
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="text-center">
+                <p class="mb-0">&copy; Brain Bridge. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

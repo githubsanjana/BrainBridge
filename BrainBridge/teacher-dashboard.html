@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard | Brain Bridge</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="teacher-dashboard.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <span style="color: #ff68bd;">Brain</span><span style="color: #07bdff;">Bridge</span> <span class="badge bg-primary">Teacher Portal</span>
+            </a>
+            <div class="d-flex align-items-center">
+                <div class="dropdown">
+                   <a href="index.html">Home</a>
+                  
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Teacher Dashboard Main Content -->
+    <div class="container-fluid teacher-dashboard-container">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-lg-2 sidebar">
+                <div class="sidebar-content">
+                    <div class="user-profile text-center mb-4">
+                        <img src="https://ui-avatars.com/api/?name=Teacher+Name&background=07bdff&color=fff" alt="Profile" class="profile-img">
+                        <h5 class="mt-2">Mrs. Sharma</h5>
+                        <p class="text-muted">Mathematics Teacher</p>
+                    </div>
+                    
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#overview">
+                                <i class="fas fa-tachometer-alt me-2"></i> Overview
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#lesson-plan">
+                                <i class="fas fa-book me-2"></i> Lesson Plans
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#students">
+                                <i class="fas fa-users me-2"></i> Students
+                            </a>
+                        </li>
+                       
+                        <li class="nav-item">
+                            <a class="nav-link" href="#messages">
+                                <i class="fas fa-envelope me-2"></i> Messages
+                            </a>
+                        </li>
+                    </ul>
+                    
+                    <div class="quick-actions mt-auto">
+                        <button class="btn btn-primary w-100 mb-2" id="quickAddLessonBtn">
+                            <i class="fas fa-plus me-1"></i> Add Lesson
+                        </button>
+                      
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="col-lg-10 main-content">
+                <!-- Overview Section -->
+                <section id="overview" class="dashboard-section">
+                    <div class="row mb-4">
+                        <div class="col-md-8">
+                            <h2 class="mb-0">Teacher Dashboard</h2>
+                            <p class="text-muted">Class: <strong>8B - Mathematics</strong> | 32 Students</p>
+                        </div>
+                        
+                    </div>
+                    
+                    <!-- Quick Stats -->
+                    <div class="row mb-4">
+                        <div class="col-md-3">
+                            <div class="card stat-card">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="icon-circle bg-primary-light">
+                                            <i class="fas fa-user-graduate text-primary"></i>
+                                        </div>
+                                        <div class="ms-3">
+                                            <h6 class="mb-0">Class Average</h6>
+                                            <h3 class="mb-0">72%</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card stat-card">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="icon-circle bg-success-light">
+                                            <i class="fas fa-chart-line text-success"></i>
+                                        </div>
+                                        <div class="ms-3">
+                                            <h6 class="mb-0">Improvement</h6>
+                                            <h3 class="mb-0">+8%</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card stat-card">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="icon-circle bg-warning-light">
+                                            <i class="fas fa-exclamation-triangle text-warning"></i>
+                                        </div>
+                                        <div class="ms-3">
+                                            <h6 class="mb-0">Needs Help</h6>
+                                            <h3 class="mb-0">5</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card stat-card">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="icon-circle bg-info-light">
+                                            <i class="fas fa-star text-info"></i>
+                                        </div>
+                                        <div class="ms-3">
+                                            <h6 class="mb-0">Top Performers</h6>
+                                            <h3 class="mb-0">7</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Weekly Lesson Plan -->
+                    <div class="card mb-4" id="lesson-plan">
+                        <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0">
+                                <i class="fas fa-calendar-alt me-2 text-primary"></i> This Week's Lesson Plan
+                            </h5>
+                            <button class="btn btn-sm btn-primary" id="addLessonBtn">
+                                <i class="fas fa-plus me-1"></i> Add Lesson
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Day</th>
+                                            <th>Topic</th>
+                                            <th>Objectives</th>
+                                            <th>Resources</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Monday</td>
+                                            <td>Algebraic Expressions</td>
+                                            <td>Simplify and evaluate expressions</td>
+                                            <td>
+                                                <span class="badge bg-primary">Worksheet</span>
+                                                <span class="badge bg-info">Video</span>
+                                            </td>
+                                            <td><span class="badge bg-success">Completed</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tuesday</td>
+                                            <td>Linear Equations</td>
+                                            <td>Solve single-variable equations</td>
+                                            <td>
+                                                <span class="badge bg-primary">Worksheet</span>
+                                                <span class="badge bg-warning">Quiz</span>
+                                            </td>
+                                            <td><span class="badge bg-success">Completed</span></td>
+                                        </tr>
+                                        <tr class="table-active">
+                                            <td>Wednesday</td>
+                                            <td>Quadratic Equations</td>
+                                            <td>Introduction to quadratic formulas</td>
+                                            <td>
+                                                <span class="badge bg-primary">Worksheet</span>
+                                                <span class="badge bg-info">Video</span>
+                                            </td>
+                                            <td><span class="badge bg-primary">Today</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Thursday</td>
+                                            <td>Geometry Basics</td>
+                                            <td>Understand angles and shapes</td>
+                                            <td>
+                                                <span class="badge bg-primary">Worksheet</span>
+                                                <span class="badge bg-danger">Activity</span>
+                                            </td>
+                                            <td><span class="badge bg-secondary">Upcoming</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Friday</td>
+                                            <td>Weekly Review</td>
+                                            <td>Reinforce key concepts</td>
+                                            <td>
+                                                <span class="badge bg-warning">Quiz</span>
+                                                <span class="badge bg-success">Game</span>
+                                            </td>
+                                            <td><span class="badge bg-secondary">Upcoming</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Student Performance -->
+                    <div class="card mb-4" id="students">
+                        <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0">
+                                <i class="fas fa-users me-2 text-primary"></i> Student Performance
+                            </h5>
+                            <div>
+                                <button class="btn btn-sm btn-primary me-2" id="enterMarksBtn">
+                                    <i class="fas fa-edit me-1"></i> Enter Marks
+                                </button>
+                                <button class="btn btn-sm btn-outline-primary">
+                                    <i class="fas fa-filter me-1"></i> Filter
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover" id="studentPerformanceTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Student</th>
+                                            <th>Last Test</th>
+                                            <th>Average</th>
+                                            <th>Improvement</th>
+                                            <th>Attendance</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="table-danger">
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <img src="https://ui-avatars.com/api/?name=Rahul+S&background=dc3545&color=fff" alt="Rahul" class="student-avatar me-2">
+                                                    <div>
+                                                        <h6 class="mb-0">Rahul Sharma</h6>
+                                                        <small class="text-muted">Roll No: 15</small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>48%</td>
+                                            <td>
+                                                <div class="progress" style="height: 6px;">
+                                                    <div class="progress-bar bg-danger" style="width: 52%"></div>
+                                                </div>
+                                                <small>52%</small>
+                                            </td>
+                                            <td>-5%</td>
+                                            <td>88%</td>
+                                            <td><span class="badge bg-danger">Needs Help</span></td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-danger">
+                                                    <i class="fas fa-exclamation-circle"></i> Flag
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr class="table-warning">
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <img src="https://ui-avatars.com/api/?name=Priya+M&background=fd7e14&color=fff" alt="Priya" class="student-avatar me-2">
+                                                    <div>
+                                                        <h6 class="mb-0">Priya Mehta</h6>
+                                                        <small class="text-muted">Roll No: 22</small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>62%</td>
+                                            <td>
+                                                <div class="progress" style="height: 6px;">
+                                                    <div class="progress-bar bg-warning" style="width: 65%"></div>
+                                                </div>
+                                                <small>65%</small>
+                                            </td>
+                                            <td>+3%</td>
+                                            <td>92%</td>
+                                            <td><span class="badge bg-warning">Monitor</span></td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-warning">
+                                                    <i class="fas fa-eye"></i> Track
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <img src="https://ui-avatars.com/api/?name=Arjun+K&background=6c757d&color=fff" alt="Arjun" class="student-avatar me-2">
+                                                    <div>
+                                                        <h6 class="mb-0">Arjun Kumar</h6>
+                                                        <small class="text-muted">Roll No: 08</small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>75%</td>
+                                            <td>
+                                                <div class="progress" style="height: 6px;">
+                                                    <div class="progress-bar" style="width: 78%"></div>
+                                                </div>
+                                                <small>78%</small>
+                                            </td>
+                                            <td>+5%</td>
+                                            <td>96%</td>
+                                            <td><span class="badge bg-info">Average</span></td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-info">
+                                                    <i class="fas fa-thumbs-up"></i> Encourage
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr class="table-success">
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <img src="https://ui-avatars.com/api/?name=Ananya+P&background=198754&color=fff" alt="Ananya" class="student-avatar me-2">
+                                                    <div>
+                                                        <h6 class="mb-0">Ananya Patel</h6>
+                                                        <small class="text-muted">Roll No: 12</small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>92%</td>
+                                            <td>
+                                                <div class="progress" style="height: 6px;">
+                                                    <div class="progress-bar bg-success" style="width: 89%"></div>
+                                                </div>
+                                                <small>89%</small>
+                                            </td>
+                                            <td>+7%</td>
+                                            <td>100%</td>
+                                            <td><span class="badge bg-success">Excellent</span></td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-success">
+                                                    <i class="fas fa-star"></i> Reward
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div class="alert alert-warning mt-3">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6><i class="fas fa-exclamation-triangle me-2"></i>Attention Needed</h6>
+                                        <p class="mb-0">3 students are performing significantly below class average in Algebra</p>
+                                    </div>
+                                    <button class="btn btn-sm btn-warning" id="viewInterventionBtn">
+                                        <i class="fas fa-chalkboard-teacher me-1"></i> <a href="#messages">View Intervention Plan</a>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Intervention Plan -->
+                    <div class="card mb-4" id="interventionPlanCard" id="messages">
+                        <div class="card-header bg-white">
+                            <h5 class="mb-0">
+                                <i class="fas fa-hands-helping me-2 text-danger"></i> Intervention Plan for Struggling Students
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="plan-item">
+                                        <div class="plan-icon bg-danger">
+                                            <i class="fas fa-user-friends"></i>
+                                        </div>
+                                        <div class="plan-content">
+                                            <h6>Peer Tutoring</h6>
+                                            <p>Pair with top performers for after-school sessions</p>
+                                            <div class="d-flex flex-wrap gap-2">
+                                                <span class="badge bg-light text-dark">Mon/Wed</span>
+                                                <span class="badge bg-light text-dark">3:30-4:30pm</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="plan-item">
+                                        <div class="plan-icon bg-primary">
+                                            <i class="fas fa-book-open"></i>
+                                        </div>
+                                        <div class="plan-content">
+                                            <h6>Custom Worksheets</h6>
+                                            <p>Simplified practice problems with step-by-step solutions</p>
+                                            <button class="btn btn-sm btn-outline-primary">Generate</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="plan-item">
+                                        <div class="plan-icon bg-warning">
+                                            <i class="fas fa-video"></i>
+                                        </div>
+                                        <div class="plan-content">
+                                            <h6>Video Tutorials</h6>
+                                            <p>Curated playlist explaining fundamental concepts</p>
+                                            <button class="btn btn-sm btn-outline-warning">View Playlist</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Lesson Modal -->
+    <div class="modal fade" id="addLessonModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add New Lesson</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="lessonForm">
+                        <div class="mb-3">
+                            <label for="lessonDate" class="form-label">Date</label>
+                            <input type="date" class="form-control" id="lessonDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="lessonTopic" class="form-label">Topic</label>
+                            <input type="text" class="form-control" id="lessonTopic" placeholder="E.g., Quadratic Equations" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="lessonObjectives" class="form-label">Learning Objectives</label>
+                            <textarea class="form-control" id="lessonObjectives" rows="3" placeholder="What students should learn..." required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Resources</label>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="resourceWorksheet">
+                                <label class="form-check-label" for="resourceWorksheet">Worksheet</label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="resourceVideo">
+                                <label class="form-check-label" for="resourceVideo">Video</label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="resourceActivity">
+                                <label class="form-check-label" for="resourceActivity">Activity</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="resourceQuiz">
+                                <label class="form-check-label" for="resourceQuiz">Quiz</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="saveLessonBtn">Save Lesson</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enter Marks Modal -->
+    <div class="modal fade" id="enterMarksModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Enter Student Marks</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="testName" class="form-label">Test Name</label>
+                        <input type="text" class="form-control" id="testName" placeholder="E.g., Algebra Midterm">
+                    </div>
+                    <div class="mb-3">
+                        <label for="testDate" class="form-label">Test Date</label>
+                        <input type="date" class="form-control" id="testDate">
+                    </div>
+                    
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Student</th>
+                                    <th>Marks (Out of 100)</th>
+                                    <th>Comments</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Rahul Sharma</td>
+                                    <td>
+                                        <input type="number" class="form-control" min="0" max="100" value="48">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control" placeholder="Needs help with...">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Priya Mehta</td>
+                                    <td>
+                                        <input type="number" class="form-control" min="0" max="100" value="62">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control" placeholder="Improving in...">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Arjun Kumar</td>
+                                    <td>
+                                        <input type="number" class="form-control" min="0" max="100" value="75">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control" placeholder="Doing well in...">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Ananya Patel</td>
+                                    <td>
+                                        <input type="number" class="form-control" min="0" max="100" value="92">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control" placeholder="Excelling in...">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="saveMarksBtn">Save Marks</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="teacher-dashboard.js"></script>
+</body>
+</html>

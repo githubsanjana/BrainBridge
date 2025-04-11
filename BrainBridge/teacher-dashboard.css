@@ -1,0 +1,277 @@
+/* Variables */
+:root {
+    --primary: #ff68bd;
+    --secondary: #a6e23d;
+    --accent1: #07bdff;
+    --accent2: #a890ff;
+    --accent3: #fd7a39;
+    --accent4: #00c69e;
+    --accent5: #f5e45f;
+    --text-dark: #2c3e50;
+    --text-light: #7f8c8d;
+    --light-bg: #f8f9fa;
+    --sidebar-width: 250px;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    color: var(--text-dark);
+}
+
+/* Layout */
+.teacher-dashboard-container {
+    padding-left: 0;
+    padding-right: 0;
+    min-height: calc(100vh - 56px);
+}
+
+.sidebar {
+    background-color: white;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+    height: calc(100vh - 56px);
+    position: sticky;
+    top: 56px;
+    padding: 0;
+}
+
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1.5rem;
+}
+
+.main-content {
+    padding: 2rem;
+    background-color: var(--light-bg);
+}
+
+/* Sidebar Styles */
+.user-profile {
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.profile-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent1);
+}
+
+.nav-item {
+    margin-bottom: 0.5rem;
+}
+
+.nav-link {
+    color: var(--text-dark);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    transition: all 0.3s;
+}
+
+.nav-link:hover, .nav-link.active {
+    background-color: rgba(7, 189, 255, 0.1);
+    color: var(--accent1);
+}
+
+.nav-link i {
+    width: 20px;
+    text-align: center;
+}
+
+.quick-actions {
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+/* Dashboard Styles */
+.dashboard-section {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.stat-card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.icon-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+}
+
+.bg-primary-light {
+    background-color: rgba(255, 104, 189, 0.1);
+}
+
+.bg-success-light {
+    background-color: rgba(0, 198, 158, 0.1);
+}
+
+.bg-warning-light {
+    background-color: rgba(253, 122, 57, 0.1);
+}
+
+.bg-info-light {
+    background-color: rgba(7, 189, 255, 0.1);
+}
+
+/* Student Avatar */
+.student-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Intervention Plan Items */
+.plan-item {
+    display: flex;
+    height: 100%;
+    background: white;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.plan-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: white;
+    flex-shrink: 0;
+    margin-right: 1rem;
+}
+
+.plan-icon.bg-danger {
+    background-color: #dc3545;
+}
+
+.plan-icon.bg-primary {
+    background-color: var(--accent1);
+}
+
+.plan-icon.bg-warning {
+    background-color: #fd7e14;
+}
+
+.plan-content h6 {
+    margin-bottom: 0.5rem;
+}
+
+.plan-content p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
+/* Table Styles */
+.table {
+    margin-bottom: 0;
+}
+
+.table th {
+    border-top: none;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.table tr.table-warning {
+    background-color: rgba(255, 193, 7, 0.1);
+}
+
+.table tr.table-success {
+    background-color: rgba(40, 167, 69, 0.1);
+}
+
+.table tr.table-danger {
+    background-color: rgba(220, 53, 69, 0.1);
+}
+
+/* Progress Bars */
+.progress {
+    height: 6px;
+    border-radius: 3px;
+}
+
+.progress-bar {
+    border-radius: 3px;
+}
+
+/* Buttons */
+.btn {
+    border-radius: 8px;
+    padding: 0.5rem 1.25rem;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--accent1);
+    border-color: var(--accent1);
+}
+
+.btn-primary:hover {
+    background-color: #0593c7;
+    border-color: #0593c7;
+    transform: translateY(-2px);
+}
+
+.btn-sm {
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .sidebar {
+        width: var(--sidebar-width);
+        position: fixed;
+        z-index: 1000;
+        transform: translateX(-100%);
+        transition: transform 0.3s;
+    }
+    
+    .sidebar.show {
+        transform: translateX(0);
+    }
+    
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-section {
+        padding: 1rem;
+    }
+    
+    .plan-item {
+        flex-direction: column;
+    }
+    
+    .plan-icon {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+}

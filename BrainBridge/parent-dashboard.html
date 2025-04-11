@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent Dashboard | Brain Bridge</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="parent-dashboard.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <span style="color: #ff68bd;">Brain</span><span style="color: #07bdff;">Bridge</span> <span class="badge bg-primary">Parent Portal</span>
+            </a>
+            <div class="d-flex align-items-center">
+                <div class="dropdown">
+                   
+                    <a href="index.html">Home</a>
+                   
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Parent Dashboard Main Content -->
+    <div class="container-fluid parent-dashboard-container">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-lg-2 sidebar">
+                <div class="sidebar-content">
+                    <div class="user-profile text-center mb-4">
+                        <img src="https://ui-avatars.com/api/?name=Parent+Name&background=07bdff&color=fff" alt="Profile" class="profile-img">
+                        <h5 class="mt-2">Parent Name</h5>
+                       
+                    </div>
+                    
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#overview">
+                                <i class="fas fa-tachometer-alt me-2"></i> Overview
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#performance">
+                                <i class="fas fa-chart-line me-2"></i> Performance
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#overview">
+                                <i class="fas fa-calendar-check me-2"></i> Attendance
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#messages">
+                                <i class="fas fa-envelope me-2"></i> Messages
+                            </a>
+                        </li>
+                        
+                    </ul>
+                    
+                  
+                </div>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="col-lg-10 main-content">
+                <!-- Overview Section -->
+                <section id="overview" class="dashboard-section">
+                    <div class="row mb-4">
+                        <div class="col-md-8">
+                            <h2 class="mb-0">Parent Dashboard</h2>
+                            <p class="text-muted">Viewing: <strong>Rahul Sharma</strong> (Grade 8 - Section B)</p>
+                        </div>
+                       
+                    </div>
+                    
+                    <!-- Quick Stats -->
+                    <div class="row mb-4">
+                        <div class="col-md-3">
+                            <div class="card stat-card">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="icon-circle bg-primary-light">
+                                            <i class="fas fa-star text-primary"></i>
+                                        </div>
+                                        <div class="ms-3">
+                                            <h6 class="mb-0">Overall Grade</h6>
+                                            <h3 class="mb-0">B+</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card stat-card">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="icon-circle bg-success-light">
+                                            <i class="fas fa-chart-line text-success"></i>
+                                        </div>
+                                        <div class="ms-3">
+                                            <h6 class="mb-0">Improvement</h6>
+                                            <h3 class="mb-0">+12%</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card stat-card">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="icon-circle bg-warning-light">
+                                            <i class="fas fa-book text-warning"></i>
+                                        </div>
+                                        <div class="ms-3">
+                                            <h6 class="mb-0">Assignments Due</h6>
+                                            <h3 class="mb-0">3</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card stat-card">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="icon-circle bg-info-light">
+                                            <i class="fas fa-check-circle text-info"></i>
+                                        </div>
+                                        <div class="ms-3">
+                                            <h6 class="mb-0">Attendance</h6>
+                                            <h3 class="mb-0">94%</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Classroom Analytics -->
+                    <div class="card mb-4" id="performance">
+                        <div class="card-header bg-white">
+                            <h5 class="mb-0">
+                                <i class="fas fa-chalkboard-teacher me-2 text-primary"></i> Classroom Analytics
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Subject</th>
+                                            <th>Your Child</th>
+                                            <th>Class Avg</th>
+                                            <th>Performance</th>
+                                            <th>Teacher Notes</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="table-warning">
+                                            <td>Mathematics</td>
+                                            <td>62%</td>
+                                            <td>75%</td>
+                                            <td>
+                                                <div class="progress" style="height: 6px;">
+                                                    <div class="progress-bar bg-warning" style="width: 62%"></div>
+                                                </div>
+                                            </td>
+                                            <td>Needs improvement in algebra</td>
+                                        </tr>
+                                        <tr class="table-success">
+                                            <td>Science</td>
+                                            <td>88%</td>
+                                            <td>82%</td>
+                                            <td>
+                                                <div class="progress" style="height: 6px;">
+                                                    <div class="progress-bar bg-success" style="width: 88%"></div>
+                                                </div>
+                                            </td>
+                                            <td>Excellent in physics concepts</td>
+                                        </tr>
+                                        <tr>
+                                            <td>English</td>
+                                            <td>75%</td>
+                                            <td>78%</td>
+                                            <td>
+                                                <div class="progress" style="height: 6px;">
+                                                    <div class="progress-bar bg-info" style="width: 75%"></div>
+                                                </div>
+                                            </td>
+                                            <td>Good, but needs more reading practice</td>
+                                        </tr>
+                                        <tr class="table-danger">
+                                            <td>History</td>
+                                            <td>54%</td>
+                                            <td>68%</td>
+                                            <td>
+                                                <div class="progress" style="height: 6px;">
+                                                    <div class="progress-bar bg-danger" style="width: 54%"></div>
+                                                </div>
+                                            </td>
+                                            <td>Struggling with dates and events</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div class="alert alert-warning mt-3">
+                                <h6><i class="fas fa-exclamation-triangle me-2"></i>Attention Needed</h6>
+                                <p class="mb-1">Rahul is significantly behind in <strong>Mathematics (13% below average)</strong> and <strong>History (14% below average)</strong>.</p>
+                                <button class="btn btn-sm btn-warning mt-2">View Intervention Plan</button>
+                            </div>
+                        </div>
+                    </div>
+               
+                   
+                    
+                    <!-- Teacher's Lesson Plan -->
+                    <div class="card" id="messages">
+                        <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0">
+                                <i class="fas fa-clipboard-list me-2 text-primary"></i> Teacher's Recommended Lesson Plan
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="accordion" id="lessonPlanAccordion">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#mathPlan">
+                                            <i class="fas fa-square-root-alt me-2 text-danger"></i> Mathematics Focus Areas
+                                        </button>
+                                    </h2>
+                                    <div id="mathPlan" class="accordion-collapse collapse show" data-bs-parent="#lessonPlanAccordion">
+                                        <div class="accordion-body">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    Algebraic Expressions
+                                                    <span class="badge bg-danger">Priority</span>
+                                                </li>
+                                                <li class="list-group-item">Linear Equations (30 min daily)</li>
+                                                <li class="list-group-item">Geometry Basics (Monday/Wednesday)</li>
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    Weekly Practice Tests
+                                                    <span class="badge bg-primary">New</span>
+                                                </li>
+                                            </ul>
+                                            <div class="mt-3">
+                                                <h6>Recommended Resources:</h6>
+                                                <div class="d-flex flex-wrap gap-2">
+                                                    <a href="https://youtube.com/playlist?list=PL1847B1B2268562C7&si=9FYQINQ9YzTOr70s" class="btn btn-sm btn-outline-danger">Khan Academy Algebra</a>
+                                                    <a href="https://www.k5learning.com/free-math-worksheets" class="btn btn-sm btn-outline-danger">Practice Worksheets</a>
+                                                    <a href="https://youtube.com/playlist?list=PLXTyt_wUBqQ5Axt76rasrdgZ4SYE27SCe&si=5RSNx0Y8kPZkxpIA" class="btn btn-sm btn-outline-danger">Video Tutorials</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#historyPlan">
+                                            <i class="fas fa-landmark me-2 text-warning"></i> History Focus Areas
+                                        </button>
+                                    </h2>
+                                    <div id="historyPlan" class="accordion-collapse collapse" data-bs-parent="#lessonPlanAccordion">
+                                        <div class="accordion-body">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">World War II Timeline</li>
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    Indian Independence Movement
+                                                    <span class="badge bg-warning">Focus</span>
+                                                </li>
+                                                <li class="list-group-item">Weekly Flashcards Practice</li>
+                                            </ul>
+                                            <div class="mt-3">
+                                                <h6>Recommended Resources:</h6>
+                                                <div class="d-flex flex-wrap gap-2">
+                                                    <a href="https://youtu.be/TsBX3PFno-A?si=ZHmj4U5uC2MEMQnN" class="btn btn-sm btn-outline-warning">Interactive Timelines</a>
+                                                    <a href="https://youtube.com/playlist?list=PLYBoqKUyc58kV4KcnX2_aUkevwJm2dFFJ&si=QN1t19QY4eouXi7p" class="btn btn-sm btn-outline-warning">Documentary List</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="parent-dashboard.js"></script>
+</body>
+</html>
