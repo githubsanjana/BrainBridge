@@ -40,6 +40,39 @@ To solve this, we created **BrainBridge**, an integrated platform that:
 - 📊 Real-time insights into child's learning curve
 
 ---
+## 🏠 Homepage
+![h1](https://github.com/user-attachments/assets/24285417-e1f2-40ac-a406-009183b1dab1)
+
+---
+## 🔑 Login / Signup
+![login](https://github.com/user-attachments/assets/8e47d2d4-f227-48b7-92e8-9a8807a358d2)
+
+
+
+---
+## 🎓 Student Dashboard
+![student](https://github.com/user-attachments/assets/18dc7145-c007-496d-8a26-5d91c4a3aa55)
+
+
+
+---
+## 👨‍👩‍👧 Parent Dashboard
+![parent](https://github.com/user-attachments/assets/3bba97f1-4006-4e44-825f-e94cd3db2e0d)
+
+
+
+---
+ ## 👩‍🏫 Teacher Dashboard
+ ![teacher](https://github.com/user-attachments/assets/a60fac37-4089-419a-a4a9-d627f9a6232e)
+
+
+
+
+---
+
+
+
+
 
 ## 🔮 Future Scope
 
